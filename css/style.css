@@ -1,0 +1,29 @@
+body {
+  background: #fff;
+}
+
+h1 {
+  margin-top: 80px;
+  color: black;
+}
+
+#slider1 {
+  color: black;
+  margin-top:  100px;
+}
+
+.dot {
+  fill: #000;
+}
+
+
+
+.ring {
+  fill: none;
+  stroke: #000;
+}
+
+.rect {
+  fill: none;
+  stroke: #000;
+}
