@@ -16,7 +16,10 @@ h1 {
   fill: #000;
 }
 
-
+.guy {
+  margin-left:150px;
+  margin-top:150px;
+}
 
 .ring {
   fill: none;
