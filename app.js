@@ -76,13 +76,27 @@ function drawSource(freq, amp, x, y) {
 }
 
 function drawReflections() {
-  ref1 = setTimeout(function() {drawReflection1(frequency, .3*amplitude, 100, 0); }, 400);
-  ref2 = setTimeout(function() {drawReflection2(frequency, .3*amplitude, 100, 300); }, 400);
-  ref3 = setTimeout(function() {drawReflection3(frequency, .3*amplitude, 0, 150); }, 400);
+  ref1 = setTimeout(function() {drawReflection1(frequency, .85*amplitude, 100, 0); }, 400);
+  ref2 = setTimeout(function() {drawReflection2(frequency, .85*amplitude, 100, 300); }, 400);
+  ref3 = setTimeout(function() {drawReflection3(frequency, .85*amplitude, 0, 150); }, 400);
   ref4 = setTimeout(function() {drawReflection4(frequency, .3*amplitude, 800, 150); }, 1700);
-  ref5 = setTimeout(function() {drawReflection5(frequency, .3*amplitude, 0, 0); }, 500);
-  ref6 = setTimeout(function() {drawReflection6(frequency, .3*amplitude, 0, 300); }, 500);
+  ref5 = setTimeout(function() {drawReflection5(frequency, .82*amplitude, 0, 0); }, 500);
+  ref6 = setTimeout(function() {drawReflection6(frequency, .82*amplitude, 0, 300); }, 500);
+  ref7 = setTimeout(function() {drawReflection7(frequency, .28*amplitude, 800, 0); }, 2100);
+  ref8 = setTimeout(function() {drawReflection8(frequency, .28*amplitude, 800, 300); }, 2100);
 }
+
+
+//Osc Functions //
+
+// var ctx = new (window.AudioContext || window.webkitAudioContext)();
+// oscillator = ctx.createOscillator();
+// var gainNode = ctx.createGain();
+// oscillator.connect(gainNode);
+// gainNode.connect(ctx.destination);
+// oscillator.type = 'sine';
+// oscillator.freqOsc.value = frequency;
+// oscillator.start();
 
 // Slider functions // 
 
@@ -128,12 +142,16 @@ function clearAll() {
     clearInterval(ref_4);
     clearInterval(ref_5);
     clearInterval(ref_6);
+    clearInterval(ref_7);
+    clearInterval(ref_8);
     clearTimeout(ref1);
     clearTimeout(ref2);
     clearTimeout(ref3);
     clearTimeout(ref4);
     clearTimeout(ref5);
     clearTimeout(ref6);
+    clearTimeout(ref7);
+    clearTimeout(ref8);
 }
 
 // Draw Reflection Functions // 
@@ -240,6 +258,46 @@ function drawReflection5(freq, amp, x, y) {
 
 function drawReflection6(freq, amp, x, y) {
    ref_6 = setInterval(function() {
+      svg.append("circle")
+          .attr("class", "ring")
+          .attr("cy", y)
+          .attr("cx", x)
+          .attr("r", 6)
+          .style("stroke-width", amp)
+          .style("stroke", "gray")
+        .transition()
+          .ease("linear")
+          .duration(2000)
+          .style("stroke-opacity", .7)
+          .style("stroke-width", .3*amp)
+          .style("stroke", "gray")
+          .attr("r", 800)
+          .remove();
+    }, freq);
+}
+
+function drawReflection7(freq, amp, x, y) {
+   ref_7 = setInterval(function() {
+      svg.append("circle")
+          .attr("class", "ring")
+          .attr("cy", y)
+          .attr("cx", x)
+          .attr("r", 6)
+          .style("stroke-width", amp)
+          .style("stroke", "gray")
+        .transition()
+          .ease("linear")
+          .duration(2000)
+          .style("stroke-opacity", .7)
+          .style("stroke-width", .3*amp)
+          .style("stroke", "gray")
+          .attr("r", 800)
+          .remove();
+    }, freq);
+}
+
+function drawReflection8(freq, amp, x, y) {
+   ref_8 = setInterval(function() {
       svg.append("circle")
           .attr("class", "ring")
           .attr("cy", y)
