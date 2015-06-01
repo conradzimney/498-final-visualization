@@ -11,6 +11,10 @@ h1 {
   color: black;
 }
 
+h2  {
+  margin-left: 80px;
+}
+
 #slider1 {
   color: black;
   margin-top:  100px;
@@ -35,7 +39,6 @@ h1 {
   stroke: #000;
 }
 
-#interactions {
-  margin-left: 150px;
-  margin-right: auto;
+#amp {
+  margin-left: 85px;
 }
