@@ -1,5 +1,9 @@
+@import url(http://fonts.googleapis.com/css?family=Oxygen);
+@import url(http://fonts.googleapis.com/css?family=Raleway);
+
 body {
   background: #fff;
+  font-family:Raleway;
 }
 
 h1 {
@@ -18,7 +22,7 @@ h1 {
 
 .guy {
   margin-left:150px;
-  margin-top:150px;
+  margin-top:100px;
 }
 
 .ring {
@@ -29,4 +33,9 @@ h1 {
 .rect {
   fill: none;
   stroke: #000;
+}
+
+#interactions {
+  margin-left: 150px;
+  margin-right: auto;
 }
