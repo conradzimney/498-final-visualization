@@ -11,7 +11,7 @@ var rect = svg.append("rect")
    .attr("width", width)
    .attr("height", height);
 
-window.audioContext = new window.AudioContext();
+window.audioContext = new window.webkitAudioContext();
 var oscillator = window.audioContext.createOscillator();
    oscillator.type = 'sine';
    oscillator.connect(window.audioContext.destination);
@@ -19,7 +19,7 @@ var gainNode = window.audioContext.createGain();
    oscillator.connect(gainNode);
    gainNode.connect(window.audioContext.destination);
    oscillator.start();
-   gainNode.value = -1;
+   gainNode.gain.value = -1;
    oscillator.frequency.value = 100;
 
 // TO DO STILL (6/1/15) :
