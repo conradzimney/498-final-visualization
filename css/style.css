@@ -2,48 +2,68 @@
 @import url(http://fonts.googleapis.com/css?family=Raleway);
 
 body {
-  background: #fff;
-  font-family:Raleway;
+   background: #FFFFFF;
+   font-family:Raleway;
 }
 
 h1 {
-  margin-top: 80px;
-  color: black;
+   padding-bottom: 20px;
 }
 
-h2  {
-  margin-left: 80px;
+header  {
+   padding-left: 80px;
+   padding-right: 80px;
+   background-color: #ABC4CC;
 }
 
-#slider1 {
-  color: black;
-  margin-top:  100px;
+p {
+   font-size: 120%;
 }
 
 .dot {
-  fill: #000;
+   fill: #000;
 }
 
-.guy {
-  margin-left:150px;
-  margin-top:100px;
+#viz {
+   margin-left:150px;
+   margin-top:50px;
 }
 
 .ring {
-  fill: none;
-  stroke: #000;
+   fill: none;
+   stroke: #000;
 }
 
 .rect {
-  fill: none;
-  stroke: #000;
+   fill: none;
+   stroke: #000;
 }
 
 #amp {
-  margin-left: 85px;
+   margin-left: 85px;
 }
 
 #button {
-  margin-top: 380px;
-  float: right;
+   float: right;
+   font-size: 110%;
 }
+
+#myselectform {
+   margin-bottom: 15px;
+}
+
+#trade {
+   text-align: right;
+}
+footer {
+   margin-top: 30px;
+   padding-left: 30px;
+   padding-right:30px;
+   padding-bottom: 8px;
+   padding-top: 4px;
+   font-size: 100%;
+   background-color: #ABC4CC;
+}
+
+
+

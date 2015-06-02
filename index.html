@@ -10,29 +10,36 @@
 	<body>
 		<main class="container-fluid">
 			<header class="row">
-				<h2>Indoor Sound Visualization</h2>
+				<h1>Indoor Sound Visualization</h1>
+				<p>Welcome to our educational Indoor Sound Visualion tool. The black dot in the rectanlge
+					represents an omni-directional audio source, while the rectangle represents an environemt
+					that the sound can reflect off. You can change the amplitude of the sound wave with the leftmost
+					slider, which roughly corrseponds to the "loudness" of the sound. You can also manipulate the 
+					frequency of the sound wave with the middle slider, which corresponds to the "pitch" of the 
+					sound. Lastly, you can choose which material you would like the environment to be made of, in
+					order to simulate different reflections of the sound waves at different locations.</p>
 			</header>
 			<div class="row">
-				<div class="col-sm-10" id="viz"></div>
+				<div class="col-sm-9" id="viz"></div>
 				<div class="col-sm-2" id="button">
-					<input type="checkbox" id="sound-button" value="Enable Sound">Enable Sound <br>
+					<input type="checkbox" id="sound-button" value="Enable Sound"> Enable Sound <br>
 				</div>
 			</div>
 
-			<div class="row" id="interactions"></div>
-				<div class="col-sm-3" id="amp">
+			<div class="row" id="interactions">
+				<div class="col-md-3" id="amp">
 					<h3>Amplitude</h3>
 					<div id="amp-slider" class="slider"></div>
 					<label for="ampamount">Amplitude:</label>
 					<input type="text" id="ampamount" readonly style="border:0; color:#45707F; font-weight:bold;">
-					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-					tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-					quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-					consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-					cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-					proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+					<p>The "loudness" of a sound wave is measured in decibels, which are measured as 10 times the 
+					logarithm of the Power Ratio. The Power Ratio is the Amplitude squared, so the "loudness" of the 
+					sound is 10 * log ( amplitude ^ 2). Here we have simplified this scientific equation so that 
+					the amplitude is directly related to the "loudness" of the sound, in order to more easily understand
+					the amplitude's relation to the "loudness". This is visually represented as the thickness of the 
+					rings.</p>
 				</div>
-				<div class="col-sm-3" id="freq">
+				<div class="col-md-3" id="freq">
 					<h3>Frequency</h3>
 					<div id="freq-slider" class="slider"></div>
 					<label for="freqamount">Frequency:</label>
@@ -44,7 +51,7 @@
 					cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
 					proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
 				</div>
-				<div class="col-sm-3" id="mat">
+				<div class="col-md-3" id="mat">
 					<h3>Material</h3>
 						<select id="myselectform">
 							<option value = "None">None</option>
@@ -58,13 +65,27 @@
 							<option value = "Plywood">Plywood</option>
 							<option value = "Perforated Transite">Perforated Transite</option>
 						</select><br>
-					<p><br>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
 					tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
 					quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
 					consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
 					cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
 					proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
 				</div>
+			</div>
+			<footer class="row">
+				<div class="col-md-2">
+					<p>Conrad Zimney <br>
+						Dillon Byron <br>
+						Bobby Brooks<br></p>
+				</div>
+				<div class="col-md-10" id="trade">
+					<p>Indoor Sound Visualization &copy;<br>
+						Informatics 498 A Interactive Information Visualization<br>
+						Spring 2015<br>
+						<a href="sources.html">Sources</a></p>
+				</div>
+			</footer>
 		</main>	
 
 
