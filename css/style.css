@@ -44,13 +44,19 @@ p {
 }
 
 #model {
-   margin-left: 85px;
-   margin-right: 85px;
+   padding-left: 85px;
+   padding-right: 85px;
 }
 
 #button {
    float: right;
    font-size: 110%;
+}
+
+@media (min-width: 1200px) {
+   #button {
+      margin-top: 305px;
+   }
 }
 
 #sine-wave {
