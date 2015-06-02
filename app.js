@@ -23,7 +23,6 @@ var gainNode = window.audioContext.createGain();
    oscillator.frequency.value = 100;
 
 // TO DO STILL (6/1/15) :
-// 
 
 var amplitude = 0;
 var frequency = 100;
