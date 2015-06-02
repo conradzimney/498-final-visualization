@@ -12,10 +12,13 @@ var rect = svg.append("rect")
     .attr("width", width)
     .attr("height", height);
 
+window.audioContext = new window.webkitAudioContext();
+var oscillator = window.audioContext.createOscillator();
+  oscillator.type = 'square';
+  oscillator.connect(window.audioContext.destination);
+
 // TO DO STILL (6/1/15) :
 // 
-// DROP DOWN FOR MATERIAL AND FUNCTIONALITY (only enable reflections after material is chosen (initial material is
-// perfectly absorbant))
 // MAKE FREQUENCY MEANINGFUL REPRESENTATION
 // FIND MEANINGFUL NUMBER FOR AMPLITUDE (and change amplitude for each reflection)
 // 
@@ -25,8 +28,9 @@ var rect = svg.append("rect")
 //
 
 var amplitude = 5;
-var frequency = 1000;
-var material;
+var frequency = 100;
+var material = "None";
+var cf = 0.0;
 var source;
 
 // Timers:
@@ -72,31 +76,19 @@ function drawSource(freq, amp, x, y) {
           .style("stroke", "gray")
           .attr("r", 800)
           .remove();
-    }, freq);
+    }, 50000/freq);
 }
 
 function drawReflections() {
-  ref1 = setTimeout(function() {drawReflection1(frequency, .85*amplitude, 100, 0); }, 400);
-  ref2 = setTimeout(function() {drawReflection2(frequency, .85*amplitude, 100, 300); }, 400);
-  ref3 = setTimeout(function() {drawReflection3(frequency, .85*amplitude, 0, 150); }, 400);
-  ref4 = setTimeout(function() {drawReflection4(frequency, .3*amplitude, 800, 150); }, 1700);
-  ref5 = setTimeout(function() {drawReflection5(frequency, .82*amplitude, 0, 0); }, 500);
-  ref6 = setTimeout(function() {drawReflection6(frequency, .82*amplitude, 0, 300); }, 500);
-  ref7 = setTimeout(function() {drawReflection7(frequency, .28*amplitude, 800, 0); }, 2100);
-  ref8 = setTimeout(function() {drawReflection8(frequency, .28*amplitude, 800, 300); }, 2100);
+  ref1 = setTimeout(function() {drawReflection1(frequency, cf*.85*amplitude, 100, 0); }, 400);
+  ref2 = setTimeout(function() {drawReflection2(frequency, cf*.85*amplitude, 100, 300); }, 400);
+  ref3 = setTimeout(function() {drawReflection3(frequency, cf*.85*amplitude, 0, 150); }, 400);
+  ref4 = setTimeout(function() {drawReflection4(frequency, cf*.3*amplitude, 800, 150); }, 1700);
+  ref5 = setTimeout(function() {drawReflection5(frequency, cf*.82*amplitude, 0, 0); }, 500);
+  ref6 = setTimeout(function() {drawReflection6(frequency, cf*.82*amplitude, 0, 300); }, 500);
+  ref7 = setTimeout(function() {drawReflection7(frequency, cf*.28*amplitude, 800, 0); }, 2100);
+  ref8 = setTimeout(function() {drawReflection8(frequency, cf*.28*amplitude, 800, 300); }, 2100);
 }
-
-
-//Osc Functions //
-
-// var ctx = new (window.AudioContext || window.webkitAudioContext)();
-// oscillator = ctx.createOscillator();
-// var gainNode = ctx.createGain();
-// oscillator.connect(gainNode);
-// gainNode.connect(ctx.destination);
-// oscillator.type = 'sine';
-// oscillator.freqOsc.value = frequency;
-// oscillator.start();
 
 // Slider functions // 
 
@@ -125,12 +117,52 @@ $(function() {
       $("#freqamount").val(ui.value);
       clearAll();
       frequency = ui.value;
+      oscillator.frequency.value = ui.value;
       drawSource(ui.value, amplitude, 100, 150);
       drawReflections();
     }
   });
   $("#freqamount").val(frequency);
 });
+
+// Drop Down Menu //
+
+document.getElementById("myselectform").onchange = function() {
+  material = this.value;
+  clearAll();
+  if (material == "None") {
+    cf = 0;
+  } else if (material == "Brick Wall (No Paint)") {
+    cf = 1 - .04;
+  } else if (material == "Plaster") {
+    cf = 1 - .06;
+  } else if (material == "Concrete") {
+    cf = 1 - .02;
+  } else if (material == "Carpeting") {
+    cf = 1 - .3;
+  } else if (material == "Acoustic Tile") {
+    cf = 1 - .7;
+  } else if (material == "Plywood") {
+    cf = 1 - .1;
+  } else if (material == "Brick Wall (With Paint)") {
+    cf = 1 - .02;
+  } else if (material == "Drapes") {
+    cf = 1 - .8;
+  } else if (material == "Perforated Transite") {
+    cf = 1 - .95;
+  } 
+  drawSource(frequency, amplitude, 100, 150);
+  drawReflections();
+}
+
+document.getElementById("sound-button").onclick = function() {
+    if (this.checked) {
+      oscillator.start();
+    }
+    else {
+      oscillator.stop();
+    }
+};
 
 // Clear all Timers and Intervals // 
 
@@ -173,7 +205,7 @@ function drawReflection1(freq, amp, x, y) {
           .style("stroke", "gray")
           .attr("r", 800)
           .remove();
-    }, freq);
+    }, 50000/freq);
 }
 
 function drawReflection2(freq, amp, x, y) {
@@ -193,7 +225,7 @@ function drawReflection2(freq, amp, x, y) {
           .style("stroke", "gray")
           .attr("r", 800)
           .remove();
-    }, freq);
+    }, 50000/freq);
 }
 
 function drawReflection3(freq, amp, x, y) {
@@ -213,7 +245,7 @@ function drawReflection3(freq, amp, x, y) {
           .style("stroke", "gray")
           .attr("r", 800)
           .remove();
-    }, freq);
+    }, 50000/freq);
 }
 
 function drawReflection4(freq, amp, x, y) {
@@ -233,7 +265,7 @@ function drawReflection4(freq, amp, x, y) {
           .style("stroke", "gray")
           .attr("r", 800)
           .remove();
-    }, freq);
+    }, 50000/freq);
 }
 
 function drawReflection5(freq, amp, x, y) {
@@ -253,7 +285,7 @@ function drawReflection5(freq, amp, x, y) {
           .style("stroke", "gray")
           .attr("r", 800)
           .remove();
-    }, freq);
+    }, 50000/freq);
 }
 
 function drawReflection6(freq, amp, x, y) {
@@ -273,7 +305,7 @@ function drawReflection6(freq, amp, x, y) {
           .style("stroke", "gray")
           .attr("r", 800)
           .remove();
-    }, freq);
+    }, 50000/freq);
 }
 
 function drawReflection7(freq, amp, x, y) {
@@ -293,7 +325,7 @@ function drawReflection7(freq, amp, x, y) {
           .style("stroke", "gray")
           .attr("r", 800)
           .remove();
-    }, freq);
+    }, 50000/freq);
 }
 
 function drawReflection8(freq, amp, x, y) {
@@ -313,13 +345,18 @@ function drawReflection8(freq, amp, x, y) {
           .style("stroke", "gray")
           .attr("r", 800)
           .remove();
-    }, freq);
+    }, 50000/freq);
 }
 
 // Attempted universal draw reflection function // 
 
 // function drawReflection(freq, amp, x, y, reflection) {
 //    reflection = setInterval(function() {
+//     drawRings(freq, amp, x, y);
+//    }
+// }
+
+// function drawRings(freq, amp, x, y) {
 //       svg.append("circle")
 //           .attr("class", "ring")
 //           .attr("cy", y)
@@ -335,10 +372,7 @@ function drawReflection8(freq, amp, x, y) {
 //           .style("stroke", "gray")
 //           .attr("r", 800)
 //           .remove();
-//     }, freq);
 // }
-
-
 
 
 

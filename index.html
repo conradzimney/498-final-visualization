@@ -12,7 +12,12 @@
 			<header class="row">
 				<h2>Indoor Sound Visualization</h2>
 			</header>
-			<div class="row" id="viz"></div>
+			<div class="row">
+				<div class="col-sm-10" id="viz"></div>
+				<div class="col-sm-2" id="button">
+					<input type="checkbox" id="sound-button" value="Enable Sound">Enable Sound <br>
+				</div>
+			</div>
 
 			<div class="row" id="interactions"></div>
 				<div class="col-sm-3" id="amp">
@@ -42,14 +47,18 @@
 				<div class="col-sm-3" id="mat">
 					<h3>Material</h3>
 						<select id="myselectform">
-							<option></option>
-							<option></option>
-							<option></option>
-							<option></option>
-							<option></option>
-							<option></option>
-						</select>
-					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+							<option value = "None">None</option>
+							<option value = "Brick Wall (No Paint)">Brick Wall (No Paint)</option>
+							<option value = "Brick Wall (With Paint)">Brick Wall (With Paint)</option>
+							<option value = "Plaster">Plaster</option>
+							<option value = "Concrete">Concrete</option>
+							<option value = "Carpeting">Carpeting</option>
+							<option value = "Drapes">Drapes</option>
+							<option value = "Acoustic Tile">Acoustic Tile</option>
+							<option value = "Plywood">Plywood</option>
+							<option value = "Perforated Transite">Perforated Transite</option>
+						</select><br>
+					<p><br>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
 					tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
 					quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
 					consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
