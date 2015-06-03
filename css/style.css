@@ -40,12 +40,12 @@ p {
 }
 
 #amp {
-   margin-left: 85px;
+   margin-left: 80px;
 }
 
 #model {
-   padding-left: 85px;
-   padding-right: 85px;
+   padding-left: 80px;
+   padding-right: 80px;
 }
 
 #button {
@@ -60,11 +60,12 @@ p {
 }
 
 #sine-wave {
-   margin-left: 150px;
+   margin-left: 135px;
+   padding: 15px;
 }
 
 #myselectform {
-   margin-bottom: 15px;
+   margin-bottom: 19px;
 }
 
 #trade {
@@ -80,5 +81,27 @@ footer {
    background-color: #ABC4CC;
 }
 
+#third-interaction {
+   margin-bottom: 8px;
+}
 
+/* unvisited link */
+a:link {
+    color: #0033CC;
+}
+
+/* visited link */
+a:visited {
+    color: #4D70DB;
+}
+
+/* mouse over link */
+a:hover {
+    color: #4D70DB;
+}
+
+/* selected link */
+a:active {
+    color: #0000FF;
+}
 

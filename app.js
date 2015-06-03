@@ -22,7 +22,9 @@ var gainNode = window.audioContext.createGain();
    gainNode.gain.value = -1;
    oscillator.frequency.value = 100;
 
-// TO DO STILL (6/1/15) :
+// TO DO STILL (6/2/15) :
+
+// Add units to sliders
 
 var amplitude = 0;
 var frequency = 100;

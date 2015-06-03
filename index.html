@@ -11,7 +11,7 @@
 		<main class="container-fluid">
 			<header class="row">
 				<h1>Indoor Sound Visualization</h1>
-				<p>Welcome to our educational Indoor Sound Visualization tool. The black dot in the rectangle represents an omni-directional audio source, while the rectangle represents an environment that the sound can reflect off. You can change the amplitude of the sound wave with the leftmost slider, which roughly corresponds to the "loudness" of the sound. You can also manipulate the frequency of the sound wave with the middle slider, which corresponds to the "pitch" of the sound. Lastly, you can choose which material you would like the environment to be made of, in order to simulate different reflections of the sound waves at different locations.</p>
+				<p>Welcome to our educational Indoor Sound Visualization tool. The black dot in the rectangle represents an omni-directional audio source, while the rectangle represents an environment that the sound can reflect off. You can change the amplitude of the sound wave with the leftmost slider, which roughly corresponds to the "loudness" of the sound. You can also manipulate the frequency of the sound wave with the middle slider, which corresponds to the "pitch" of the sound. Lastly, you can choose which material you would like the environment to be made of, in order to simulate different reflections of the sound waves at different locations. Learn more in our <a href="final-paper.html">Final Paper</a>.</p>
 			</header>
 			<div class="row">
 				<div class="col-sm-9" id="viz"></div>
@@ -36,7 +36,7 @@
 					<p>The frequency of a sound wave is measured in hertz, or cycles per second. A cycle in this case refers to one completion of the sound wave traveling from it's starting position back to it's starting position. The frequency of the sound wave is directly related to the "pitch" of the sound also, so a lower frequency creates a deeper sound, while a higher frequency creates a more high pitched sound. The general perceivable range of human hearing is between 20 and 20000 hertz, but this range is too large to effectively simulate in this model. Because of this we decided to provide a range of 20 to 2000 hertz.</p>
 				</div>
 				<div class="col-md-3" id="mat">
-					<h3>Material</h3>
+					<h3 id="third-interaction">Material</h3>
 						<select id="myselectform">
 							<option value = "None">None</option>
 							<option value = "Brick Wall (No Paint)">Brick Wall (No Paint)</option>
@@ -55,15 +55,18 @@
 			<div class="row" id="model">
 				<h2 id="divider">Our Model</h2>
 				<img src="sine-wave.gif" id="sine-wave" align="middle">
-				<p>In order to understand the reflective properties of sound given spatial boundaries, we needed to modify the traditional model of of the sine wave. To provide context, imagine the above sine wave rotated about its x-axis towards you 90 degrees, then spun 360 degrees around our point-source model in the interactive visualization. Our model displays the peaks of each sine wave propagating outward in an omni-directional fashion. Thus, frequency corresponds to the distance between the resulting concentric circles, only slowed down to a visually acceptable extent; 100 cycles/second (Hz) is displayed closer to 2 cycles/second (Hz). Additionally, amplitude is encoded as the thickness of the peak, or in our model's case, the thickness of each concentric circle.</p>
+				<p>In order to understand the reflective properties of sound given spatial boundaries, we needed to modify the traditional model of of the sine wave. To provide context, imagine the above sine wave rotated about its x-axis towards you 90 degrees, then extended 360 degrees around our point-source model in the interactive visualization. Our model displays the peaks (compression points) of each sine wave propagating outward in an omni-directional fashion. Thus, frequency corresponds to the distance between the resulting concentric circles, or in this picture, the wavelength. This frequency is however slowed down to a more visually acceptable extent; 100 cycles/second (Hz) is displayed closer to 2 cycles/second (Hz). Additionally, the vertical amplitude is encoding in our model as the thickness of each concentric circle.</p>
 			</div>
 			<footer class="row">
-				<div class="col-md-2">
+				<div class="col-md-4">
 					<p>Conrad Zimney <br>
 						Dillon Byron <br>
 						Bobby Brooks<br></p>
 				</div>
-				<div class="col-md-10" id="trade">
+				<div class="col-md-2">
+					<p>Link to <a href="final-paper.html">Final Paper</a></p>
+				</div>
+				<div class="col-md-6" id="trade">
 					<p>Indoor Sound Visualization &copy;<br>
 						Informatics 498 A Interactive Information Visualization<br>
 						Spring 2015<br>
@@ -71,7 +74,6 @@
 				</div>
 			</footer>
 		</main>	
-
 
 	<!-- D3, jQuery, jQuery UI, jQuery CSS, Bootstrap links -->
 		<script src="http://d3js.org/d3.v3.js"></script>
