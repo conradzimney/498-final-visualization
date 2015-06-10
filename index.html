@@ -5,13 +5,14 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<title>Indoor Sound Visualization</title>
 		<link rel="stylesheet" type="text/css" href="css/style.css">
+		<link rel="icon" type="image/png" href="ear-icon.jpeg">
 
 	</head>
 	<body>
 		<main class="container-fluid">
 			<header class="row">
 				<h1>Indoor Sound Visualization</h1>
-				<p>Welcome to our educational Indoor Sound Visualization tool. The black dot in the rectangle represents an omni-directional audio source, while the rectangle represents an environment that the sound can reflect off. You can change the amplitude of the sound wave with the leftmost slider, which roughly corresponds to the "loudness" of the sound. You can also manipulate the frequency of the sound wave with the middle slider, which corresponds to the "pitch" of the sound. Lastly, you can choose which material you would like the environment to be made of, in order to simulate different reflections of the sound waves at different locations. Learn more in our <a href="final-paper.html">Final Paper</a>.</p>
+				<p>Welcome to our educational Indoor Sound Visualization tool! The black dot in the rectangle represents an omni-directional audio source, while the rectangle represents an environment where the sound waves are contained. You can change the amplitude of the sound wave with the leftmost slider, which roughly corresponds to the "loudness" of the sound. You can also manipulate the frequency of the sound wave with the middle slider, which corresponds to the "pitch" of the sound. Lastly, you can choose which material you would like the environment to be made of, in order to simulate different reflections of the sound waves at different locations. Learn more in our <a href="Final-Paper-PDF.pdf" target="_blank">Final Paper</a>.</p>
 			</header>
 			<div class="row">
 				<div class="col-sm-9" id="viz"></div>
@@ -49,13 +50,13 @@
 							<option value = "Plywood">Plywood</option>
 							<option value = "Perforated Transite">Perforated Transite</option>
 						</select><br>
-					<p>The material the environment is made of defines how much energy is absorbed and how much is reflected. This is determined by the absorption coefficient, where a perfectly absorbent material corresponds to a coefficient of 1, because all sound energy is absorbed. Whereas a perfectly reflective material corresponds to a coefficient of zero, because none of the energy is absorbed. These coefficients were determined by Dr. Wallace Sabine, who has been deemed father of modern architectural acoustics. We defined different reflection points among the environment that we thought best modeled the significance of the sound's reflective properties.</p>
+					<p>The material the environment is made of defines how much energy is absorbed and how much is reflected. This is determined by the absorption coefficient, where a perfectly absorbent material corresponds to a coefficient of 1, because all sound energy is absorbed. Whereas a perfectly reflective material corresponds to a coefficient of zero, because none of the energy is absorbed. These coefficients were determined by Dr. Wallace Sabine, who has been deemed the father of modern architectural acoustics. We defined different reflection points among the environment that we thought best modeled the significance of the sound's reflective properties.</p>
 				</div>
 			</div>
 			<div class="row" id="model">
 				<h2 id="divider">Our Model</h2>
 				<img src="sine-wave.gif" id="sine-wave" align="middle">
-				<p>In order to understand the reflective properties of sound given spatial boundaries, we needed to modify the traditional model of of the sine wave. To provide context, imagine the above sine wave rotated about its x-axis towards you 90 degrees, then extended 360 degrees around our point-source model in the interactive visualization. Our model displays the peaks (compression points) of each sine wave propagating outward in an omni-directional fashion. Thus, frequency corresponds to the distance between the resulting concentric circles, or in this picture, the wavelength. This frequency is however slowed down to a more visually acceptable extent; 100 cycles/second (Hz) is displayed closer to 2 cycles/second (Hz). Additionally, the vertical amplitude is encoding in our model as the thickness of each concentric circle.</p>
+				<p>In order to understand the reflective properties of sound given spatial boundaries, we needed to modify the traditional model of of the sine wave. To provide context, imagine the above sine wave rotated about its x-axis, towards you 90 degrees, then extended 360 degrees around our point-source model (black dot) in the interactive visualization. Our model displays the peaks (compression points) of each sine wave propagating outward in an omni-directional fashion. Thus, frequency corresponds to the distance between the resulting concentric circles, or in this picture, the wavelength. This frequency is however slowed down to a more visually acceptable extent; 100 cycles/second is displayed closer to 2 cycles/second (hz). Additionally, the vertical amplitude is encoded in our model as the thickness of each concentric circle.</p>
 			</div>
 			<footer class="row">
 				<div class="col-md-4">
@@ -64,13 +65,13 @@
 						Bobby Brooks<br></p>
 				</div>
 				<div class="col-md-2">
-					<p>Link to <a href="final-paper.html">Final Paper</a></p>
+					<p>Link to <a href="Final-Paper-PDF.pdf" target="_blank">Final Paper</a></p>
 				</div>
 				<div class="col-md-6" id="trade">
 					<p>Indoor Sound Visualization &copy;<br>
 						Informatics 498 A Interactive Information Visualization<br>
 						Spring 2015<br>
-						<a href="sources.html">Sources</a></p>
+					</p>
 				</div>
 			</footer>
 		</main>	

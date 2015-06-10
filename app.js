@@ -125,7 +125,7 @@ $(function() {
       max: 2000,
       value: 100,
       slide: function(event, ui) {
-         $("#freqamount").val(ui.value);
+         $("#freqamount").val(ui.value+" hz");
          clearAll();
          frequency = ui.value;
          oscillator.frequency.value = ui.value;
